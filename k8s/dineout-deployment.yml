@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: dineout-service
 spec:
-  replicas: 2
+  replicas: 3
   selector:
     matchLabels:
       app: dineout
