@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dineout-service
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: dineout
+  template:
+    metadata:
+      labels:
+        app: dineout
+    spec:
+      containers:
+        - name: dineout-container
+          image: rkdocker1800/foodapp:dineoutimage
+          ports:
+            - containerPort: 8093

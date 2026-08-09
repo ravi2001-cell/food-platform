@@ -1,0 +1,21 @@
+---
+apiVersion : apps/v1
+kind : Deployment
+metadata :
+  name : food-service
+spec :
+  replicas : 2
+  selector :
+    matchLabels :
+      app : swiggy
+  template :
+    metadata :
+      labels :
+        app : swiggy
+    spec :
+      containers :
+        - name : food-service
+          image : rkdocker1800/foodapp:foodimage
+          ports :
+            - containerPort : 8091
+

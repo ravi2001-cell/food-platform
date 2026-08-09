@@ -1,0 +1,21 @@
+---
+apiVersion : apps/v1
+kind : Deployment
+metadata :
+  name : grocerre
+spec :
+  replicas : 2
+  selector :
+    matchLabels :
+      app : grocerre
+  template :
+    metadata :
+      labels :
+        app : grocerre
+    spec :
+      containers :
+        - name : grocerre-container
+          image : rkdocker1800/foodapp:grocerreimage
+          ports :
+            - containerPort : 8092
+
